@@ -54,8 +54,40 @@ scaled_geography_score = scaler.fit_transform(geography_score.values.reshape(-1,
 
 #Strong correlation between weekly_self_study_hours and math_score, physics_score, chemistry_score, biology_score, english_score, geography_score
 
-
 #Pearson Correlation Coefficient
+
+#Pearson correlation between IV and IV
+
+# Pearson correlation between part_time_job and weekly_self_study_hours
+corr_part_time_job_weekly_self_study, _ = pearsonr(part_time_job, weekly_self_study_hours)
+print(f"Pearson correlation between part_time_job and weekly_self_study_hours: {corr_part_time_job_weekly_self_study}")
+
+# Pearson correlation between extracurricular_activities and weekly_self_study_hours
+corr_extracurricular_weekly_self_study, _ = pearsonr(extracurricular_activities, weekly_self_study_hours)
+print(f"Pearson correlation between extracurricular_activities and weekly_self_study_hours: {corr_extracurricular_weekly_self_study}")
+
+# Pearson correlation between missing_days and weekly_self_study_hours
+corr_missing_days_weekly_self_study, _ = pearsonr(missing_days, weekly_self_study_hours)
+print(f"Pearson correlation between missing_days and weekly_self_study_hours: {corr_missing_days_weekly_self_study}")
+
+# Pearson correlation between part_time_job and missing_days
+corr_part_time_job_missing_days, _ = pearsonr(part_time_job, missing_days)
+print(f"Pearson correlation between part_time_job and missing_days: {corr_part_time_job_missing_days}")
+
+# Pearson correlation between extracurricular_activities and missing_days
+corr_extracurricular_missing_days, _ = pearsonr(extracurricular_activities, missing_days)
+print(f"Pearson correlation between extracurricular_activities and missing_days: {corr_extracurricular_missing_days}")
+
+# Pearson correlation between part_time_job and extracurricular_activities
+corr_part_time_job_extracurricular, _ = pearsonr(part_time_job, extracurricular_activities)
+print(f"Pearson correlation between part_time_job and extracurricular_activities: {corr_part_time_job_extracurricular}")
+
+##############################################################################################
+#Pearson correlation between part_time_job and missing_days: 0.20636065645123192 MUTLICONLINEARITY!!!!!!!!!!!!!
+
+
+
+
 
 # Pearson correlation between gender and math_score
 corr_missing_days_math, _ = pearsonr(missing_days, math_score)
@@ -172,6 +204,10 @@ print(f"Pearson correlation between weekly_self_study_hours and geography_score:
 
 
 #highest correlation is between weekly_self_study_hours and math_score, physics_score, chemistry_score, biology_score, english_score, geography_score
+#The variables that affect the performance in scores is weekly_self_study_hours
+#The variables that affect the performance in scores is not part_time_job, extracurricular_activities, missing_days
+#The variables that affect the performance
+
 
 #Pearson correlation between weekly_self_study_hours and math_score: 0.39356929824986275
 #Pearson correlation between weekly_self_study_hours and history_score: 0.27623076103095523
@@ -181,8 +217,10 @@ print(f"Pearson correlation between weekly_self_study_hours and geography_score:
 #Pearson correlation between weekly_self_study_hours and english_score: 0.2477960153508276
 #Pearson correlation between weekly_self_study_hours and geography_score: 0.15362244292021798
 
+#these values of correlations are not very high but they are still significant
 
 
+#modeling bivariate relationships
 model = LinearRegression()
 weekly_self_study_hours = np.array(weekly_self_study_hours).reshape(-1,1)
 model.fit(weekly_self_study_hours, math_score)
@@ -252,6 +290,13 @@ print(result.summary())
 #line below is for the standard error
 print("Standard Error: ")
 print(result.scale**0.5)
+
+
+
+
+
+
+
 
 
 
