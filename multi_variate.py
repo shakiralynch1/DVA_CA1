@@ -292,11 +292,72 @@ print("Standard Error: ")
 print(result.scale**0.5)
 
 
+#visualising the correlation between weekly study hours and mathscore with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title(" math score vs Weekly study hours ")
+plt.xlabel("Mathscore")
+plt.ylabel("weekly study hours")
+scatter = plt.scatter( scaled_math_score,scaled_weekly_self_study_hours, c= part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names,title="Part Time Job")
+plt.show()
 
+#From the graph I can see that students who have a part time job have a higher math score than students who do not have a part time job 
 
+#visualising the correlation between weekly study hours and history score with if the student is working part time or not
 
+# Visualizing the correlation between weekly study hours and history score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("History score vs Weekly study hours")
+plt.xlabel("History score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(scaled_history_score, scaled_weekly_self_study_hours, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+plt.show()
 
+# Visualizing the correlation between weekly study hours and physics score with if the student is working part time or not
 
+plt.title("Physics score vs Weekly study hours")
+plt.xlabel("Physics score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(scaled_physics_score, scaled_weekly_self_study_hours, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+plt.show()
+
+# Visualizing the correlation between weekly study hours and chemistry score with if the student is working part time or not
+
+plt.title("Chemistry score vs Weekly study hours")
+plt.xlabel("Chemistry score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(scaled_chemistry_score, scaled_weekly_self_study_hours, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+plt.show()
+
+# Visualizing the correlation between weekly study hours and biology score with if the student is working part time or not
+
+plt.title("Biology score vs Weekly study hours")
+plt.xlabel("Biology score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(scaled_biology_score, scaled_weekly_self_study_hours, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+plt.show()
+
+# Visualizing the correlation between weekly study hours and English score with if the student is working part time or not
+
+plt.title("English score vs Weekly study hours")
+plt.xlabel("English score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(scaled_english_score, scaled_weekly_self_study_hours, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+plt.show()
+
+# Visualizing the correlation between weekly study hours and geography score with if the student is working part time or not
+
+plt.title("Geography score vs Weekly study hours")
+plt.xlabel("Geography score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(scaled_geography_score, scaled_weekly_self_study_hours, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+plt.show()
 
 
 
