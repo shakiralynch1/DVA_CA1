@@ -21,11 +21,6 @@ weekly_self_study_hours = df['weekly_self_study_hours']
 missing_days = df['absence_days']
 extracurricular_activities = df['extracurricular_activities_True']
 
-# Scale the weekly_self_study_hours
-scaler = StandardScaler()
-scaled_weekly_self_study_hours = scaler.fit_transform(weekly_self_study_hours.values.reshape(-1, 1))
-scaled_missing_days = scaler.fit_transform(missing_days.values.reshape(-1, 1))
-
 
 #intialize the dependent variables
 math_score = df['math_score']
@@ -35,16 +30,6 @@ chemistry_score = df['chemistry_score']
 biology_score = df['biology_score']
 english_score = df['english_score']
 geography_score = df['geography_score']
-
-# Scale all the scores
-
-scaled_math_score = scaler.fit_transform(math_score.values.reshape(-1, 1))
-scaled_history_score = scaler.fit_transform(history_score.values.reshape(-1, 1))
-scaled_physics_score = scaler.fit_transform(physics_score.values.reshape(-1, 1))
-scaled_chemistry_score = scaler.fit_transform(chemistry_score.values.reshape(-1, 1))
-scaled_biology_score = scaler.fit_transform(biology_score.values.reshape(-1, 1))
-scaled_english_score = scaler.fit_transform(english_score.values.reshape(-1, 1))
-scaled_geography_score = scaler.fit_transform(geography_score.values.reshape(-1, 1))
 
 #IV TO IV SCATTER PLOTS
 # IV TO IV SCATTER PLOTS
@@ -291,6 +276,8 @@ print(result.summary())
 print("Standard Error: ")
 print(result.scale**0.5)
 
+print(len(weekly_self_study_hours))
+print(len(history_score))
 
 #visualising the correlation between weekly study hours and mathscore with if the student is working part time or not
 names = ["Working", "Not Working"]
@@ -306,11 +293,14 @@ plt.show()
 #visualising the correlation between weekly study hours and history score with if the student is working part time or not
 
 # Visualizing the correlation between weekly study hours and history score with if the student is working part time or not
+print(weekly_self_study_hours[0])
+print(history_score[0])
+
 names = ["Working", "Not Working"]
 plt.title("History score vs Weekly study hours")
 plt.xlabel("History score")
 plt.ylabel("Weekly study hours")
-scatter = plt.scatter(scaled_history_score, scaled_weekly_self_study_hours, c=part_time_job, cmap='viridis')
+scatter = plt.scatter(history_score, weekly_self_study_hours, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
 plt.show()
 
