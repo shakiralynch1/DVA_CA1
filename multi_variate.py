@@ -16,20 +16,22 @@ df = pd.read_csv('modified_student_scores.csv')
 
 #initialize the independent variables
 
-part_time_job = df['part_time_job_True']
-weekly_self_study_hours = df['weekly_self_study_hours']
-missing_days = df['absence_days']
-extracurricular_activities = df['extracurricular_activities_True']
+part_time_job = df['part_time_job_True'].values
+weekly_self_study_hours = df['weekly_self_study_hours'].values
+missing_days = df['absence_days'].values
+extracurricular_activities = df['extracurricular_activities_True'].values
 
+print(type(weekly_self_study_hours[0]))
+print(weekly_self_study_hours[0])
 
 #intialize the dependent variables
-math_score = df['math_score']
-history_score = df['history_score']
-physics_score = df['physics_score']
-chemistry_score = df['chemistry_score']
-biology_score = df['biology_score']
-english_score = df['english_score']
-geography_score = df['geography_score']
+math_score = df['math_score'].values
+history_score = df['history_score'].values
+physics_score = df['physics_score'].values
+chemistry_score = df['chemistry_score'].values
+biology_score = df['biology_score'].values
+english_score = df['english_score'].values
+geography_score = df['geography_score'].values
 
 #IV TO IV SCATTER PLOTS
 # IV TO IV SCATTER PLOTS
@@ -207,15 +209,15 @@ print(f"Pearson correlation between weekly_self_study_hours and geography_score:
 
 #modeling bivariate relationships
 model = LinearRegression()
-weekly_self_study_hours = np.array(weekly_self_study_hours).reshape(-1,1)
-model.fit(weekly_self_study_hours, math_score)
-r_sq= model.score(weekly_self_study_hours, math_score)
+weekly_self_study_hours_arr = np.array(weekly_self_study_hours).reshape(-1,1)
+model.fit(weekly_self_study_hours_arr, math_score)
+r_sq= model.score(weekly_self_study_hours_arr, math_score)
 print(r_sq)
 
 #R^2 value is 0.154
 
-weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
-model =sm.OLS(math_score, weekly_self_study_hours)
+model_weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
+model =sm.OLS(math_score, model_weekly_self_study_hours)
 result=model.fit()
 print(result.summary())
 #line below is for the standard error
@@ -223,8 +225,8 @@ print("Standard Error: ")
 print(result.scale**0.5)
 
 
-weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
-model =sm.OLS(history_score, weekly_self_study_hours)
+model_weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
+model =sm.OLS(history_score, model_weekly_self_study_hours)
 result=model.fit()
 print(result.summary())
 #line below is for the standard error
@@ -232,8 +234,8 @@ print("Standard Error: ")
 print(result.scale**0.5)
 
 
-weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
-model =sm.OLS(physics_score, weekly_self_study_hours)
+model_weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
+model =sm.OLS(physics_score, model_weekly_self_study_hours)
 result=model.fit()
 print(result.summary())
 #line below is for the standard error
@@ -242,25 +244,16 @@ print(result.scale**0.5)
 
 
 
-weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
-model =sm.OLS(chemistry_score, weekly_self_study_hours)
+model_weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
+model =sm.OLS(chemistry_score, model_weekly_self_study_hours)
 result=model.fit()
 print(result.summary())
 #line below is for the standard error
 print("Standard Error: ")
 print(result.scale**0.5)
 
-weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
-model =sm.OLS(biology_score, weekly_self_study_hours)
-result=model.fit()
-print(result.summary())
-#line below is for the standard error
-print("Standard Error: ")
-print(result.scale**0.5)
-
-
-weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
-model =sm.OLS(english_score, weekly_self_study_hours)
+model_weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
+model =sm.OLS(biology_score, model_weekly_self_study_hours)
 result=model.fit()
 print(result.summary())
 #line below is for the standard error
@@ -268,23 +261,34 @@ print("Standard Error: ")
 print(result.scale**0.5)
 
 
-weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
-model =sm.OLS(geography_score, weekly_self_study_hours)
+model_weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
+model =sm.OLS(english_score, model_weekly_self_study_hours)
 result=model.fit()
 print(result.summary())
 #line below is for the standard error
 print("Standard Error: ")
 print(result.scale**0.5)
 
-print(len(weekly_self_study_hours))
-print(len(history_score))
+
+model_weekly_self_study_hours = sm.add_constant(weekly_self_study_hours)
+model =sm.OLS(geography_score, model_weekly_self_study_hours)
+result=model.fit()
+print(result.summary())
+#line below is for the standard error
+print("Standard Error: ")
+print(result.scale**0.5)
+
+
+
+
+print(weekly_self_study_hours[0])
 
 #visualising the correlation between weekly study hours and mathscore with if the student is working part time or not
 names = ["Working", "Not Working"]
 plt.title(" math score vs Weekly study hours ")
 plt.xlabel("Mathscore")
 plt.ylabel("weekly study hours")
-scatter = plt.scatter( scaled_math_score,scaled_weekly_self_study_hours, c= part_time_job, cmap='viridis')
+scatter = plt.scatter( math_score,weekly_self_study_hours, c= part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names,title="Part Time Job")
 plt.show()
 
@@ -293,8 +297,8 @@ plt.show()
 #visualising the correlation between weekly study hours and history score with if the student is working part time or not
 
 # Visualizing the correlation between weekly study hours and history score with if the student is working part time or not
-print(weekly_self_study_hours[0])
-print(history_score[0])
+
+
 
 names = ["Working", "Not Working"]
 plt.title("History score vs Weekly study hours")
@@ -403,10 +407,6 @@ z = np.array(part_time_job)
 #z = [row[0] for row in z]
 ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
 plt.show()
-
-
-
-
 
 
 
