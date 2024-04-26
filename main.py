@@ -9,12 +9,12 @@ df = pd.read_csv('student-scores.csv')
 print(df.head())
 
 # One-hot encode the data 
-encoded_df = pd.get_dummies(df, columns=['gender', 'part_time_job', 'extracurricular_activities'], prefix=['gender', 'part_time_job', 'extracurricular_activities'], dtype=int, )
+encoded_df = pd.get_dummies(df, columns=['part_time_job', 'extracurricular_activities'], prefix=['part_time_job', 'extracurricular_activities'], dtype=int, )
 print(encoded_df.head())
 
 # Drop the columns that are not needed
 df = pd.DataFrame(encoded_df)
-obselete_columns = ['id','first_name','last_name','email', 'career_aspiration']
+obselete_columns = ['id','first_name','last_name','email', 'career_aspiration', 'part_time_job_False', 'extracurricular_activities_False']
 df.drop(obselete_columns, axis=1, inplace=True)
 
 print(df.head())
