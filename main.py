@@ -29,7 +29,7 @@ df = df.explode(['weekly_self_study_hours'])
 
 # Convert the 'weekly_self_study_hours' column to integer
 df['weekly_self_study_hours'] = df['weekly_self_study_hours'].apply(lambda x: x[0] if isinstance(x, np.ndarray) else x).astype(np.int64)
-
+df['extracurricular_activities_True'] = df['extracurricular_activities_True'].astype('int64')
 # Save the modified data
 df.to_csv('modified_student_scores.csv', index=False)
 
@@ -53,5 +53,6 @@ geography_score = df['geography_score'].values
 
 print(type(weekly_self_study_hours[0]))
 print(weekly_self_study_hours[0])
-
+print(type(extracurricular_activities[0]))
+print(extracurricular_activities[0])
 
