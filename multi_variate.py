@@ -567,4 +567,57 @@ plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurri
 
 
 
+fig = plt.figure(figsize=(14, 12))
+ax = plt.axes(projection='3d')
+x = np.array(math_score)
+y = np.array(weekly_self_study_hours)
+z = np.array(part_time_job)
+#z = [row[0] for row in z]
+ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plt.show()
+
+fig = plt.figure(figsize=(14, 12))
+ax = plt.axes(projection='3d')
+x = np.array(history_score)
+y = np.array(weekly_self_study_hours)
+z = np.array(part_time_job)
+#z = [row[0] for row in z]
+ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plt.show()
+
+fig = plt.figure(figsize=(14, 12))
+ax = plt.axes(projection='3d')
+x = np.array(physics_score)
+y = np.array(weekly_self_study_hours)
+z = np.array(part_time_job)
+#z = [row[0] for row in z]
+ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plt.show()
+
+fig = plt.figure(figsize=(14, 12))
+ax = plt.axes(projection='3d')
+x = np.array(biology_score)
+y = np.array(weekly_self_study_hours)  
+z = np.array(part_time_job)
+#z = [row[0] for row in z]
+ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plt.show()
+
+fig = plt.figure(figsize=(14, 12))
+ax = plt.axes(projection='3d')
+x = np.array(chemistry_score)
+y = np.array(weekly_self_study_hours)
+z = np.array(part_time_job)
+#z = [row[0] for row in z]
+ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plt.show()
+
+fig = plt.figure(figsize=(14, 12))
+ax = plt.axes(projection='3d')
+x = np.array(geography_score)
+y = np.array(weekly_self_study_hours)
+z = np.array(part_time_job)
+#z = [row[0] for row in z]
+ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plt.show()
 
