@@ -621,3 +621,56 @@ z = np.array(part_time_job)
 ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
 #plt.show()
 
+
+##MODELS##########
+
+X = df[['weekly_self_study_hours', 'part_time_job_True']]
+X = sm.add_constant(X)
+
+scores = ['math_score', 'history_score', 'physics_score', 'chemistry_score', 'biology_score', 'english_score', 'geography_score']
+
+for score in scores:
+    y = df[score]
+    model = sm.OLS(y, X).fit()
+    print(f"Summary for {score}:")
+    print(model.summary())
+    print("\n")
+    
+    
+X = df[['missing_days', 'part_time_job_True']]
+X = sm.add_constant(X)
+
+scores = ['math_score', 'history_score', 'physics_score', 'chemistry_score', 'biology_score', 'english_score', 'geography_score']
+
+for score in scores:
+    y = df[score]
+    model = sm.OLS(y, X).fit()
+    print(f"Summary for {score}:")
+    print(model.summary())
+    print("\n")
+    
+X = df[['weekly_self_study_hours', 'extracurricular_activities_True']]
+X = sm.add_constant(X)
+
+scores = ['math_score', 'history_score', 'physics_score', 'chemistry_score', 'biology_score', 'english_score', 'geography_score']
+
+for score in scores:
+    y = df[score]
+    model = sm.OLS(y, X).fit()
+    print(f"Summary for {score}:")
+    print(model.summary())
+    print("\n")
+       
+       
+X = df[['missing_days', 'extracurricular_activities_True']]
+X = sm.add_constant(X)
+
+scores = ['math_score', 'history_score', 'physics_score', 'chemistry_score', 'biology_score', 'english_score', 'geography_score']
+
+for score in scores:
+    y = df[score]
+    model = sm.OLS(y, X).fit()
+    print(f"Summary for {score}:")
+    print(model.summary())
+    print("\n")
+    
