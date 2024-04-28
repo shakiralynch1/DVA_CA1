@@ -3,8 +3,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.preprocessing import StandardScaler
 from scipy.stats import pearsonr
 from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
@@ -21,8 +19,9 @@ weekly_self_study_hours = df['weekly_self_study_hours'].values
 missing_days = df['absence_days'].values
 extracurricular_activities = df['extracurricular_activities_True'].values
 
-print(type(weekly_self_study_hours[0]))
-print(weekly_self_study_hours[0])
+print(type(extracurricular_activities[0]))
+print(extracurricular_activities[0])
+
 
 #intialize the dependent variables
 math_score = df['math_score'].values
@@ -290,7 +289,7 @@ plt.xlabel("Mathscore")
 plt.ylabel("weekly study hours")
 scatter = plt.scatter( math_score,weekly_self_study_hours, c= part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names,title="Part Time Job")
-plt.show()
+#plt.show()
 
 #From the graph I can see that students who have a part time job have a higher math score than students who do not have a part time job 
 
@@ -306,7 +305,7 @@ plt.xlabel("History score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(history_score, weekly_self_study_hours, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
-plt.show()
+#plt.show()
 
 # Visualizing the correlation between weekly study hours and physics score with if the student is working part time or not
 
@@ -315,7 +314,7 @@ plt.xlabel("Physics score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(physics_score, weekly_self_study_hours, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
-plt.show()
+#plt.show()
 
 # Visualizing the correlation between weekly study hours and chemistry score with if the student is working part time or not
 
@@ -324,7 +323,7 @@ plt.xlabel("Chemistry score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(chemistry_score, weekly_self_study_hours, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
-plt.show()
+#plt.show()
 
 # Visualizing the correlation between weekly study hours and biology score with if the student is working part time or not
 
@@ -333,7 +332,7 @@ plt.xlabel("Biology score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(biology_score, weekly_self_study_hours, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
-plt.show()
+#plt.show()
 
 # Visualizing the correlation between weekly study hours and English score with if the student is working part time or not
 
@@ -342,7 +341,7 @@ plt.xlabel("English score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(english_score, weekly_self_study_hours, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
-plt.show()
+#plt.show()
 
 # Visualizing the correlation between weekly study hours and geography score with if the student is working part time or not
 
@@ -351,62 +350,85 @@ plt.xlabel("Geography score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(geography_score, weekly_self_study_hours, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+
+
+print("After")
+
+print(type(weekly_self_study_hours[0]))
+print(weekly_self_study_hours[0])
+print(type(extracurricular_activities[0]))
+print(extracurricular_activities[0])
+print(len(extracurricular_activities))
+print(type(missing_days[0]))
+print(missing_days[0])
+print(type(math_score[0]))
+print(math_score[0])
+
+
+
+#plotting the correlation between weekly study hours and math score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Math score vs Weekly study hours")
+plt.xlabel("Math score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(math_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
 plt.show()
 
-
-fig = plt.figure(figsize=(14, 12))
-ax = plt.axes(projection='3d')
-x = np.array(math_score)
-y = np.array(weekly_self_study_hours)
-z = np.array(part_time_job)
-#z = [row[0] for row in z]
-ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plotting the correlation between weekly study hours and history score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("History score vs Weekly study hours")
+plt.xlabel("History score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(history_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
 plt.show()
 
-fig = plt.figure(figsize=(14, 12))
-ax = plt.axes(projection='3d')
-x = np.array(history_score)
-y = np.array(weekly_self_study_hours)
-z = np.array(part_time_job)
-#z = [row[0] for row in z]
-ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plotting the correlation between weekly study hours and physics score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Physics score vs Weekly study hours")
+plt.xlabel("Physics score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(physics_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
 plt.show()
 
-fig = plt.figure(figsize=(14, 12))
-ax = plt.axes(projection='3d')
-x = np.array(physics_score)
-y = np.array(weekly_self_study_hours)
-z = np.array(part_time_job)
-#z = [row[0] for row in z]
-ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plotting the correlation between weekly study hours and chemistry score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Chemistry score vs Weekly study hours")
+plt.xlabel("Chemistry score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(chemistry_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
 plt.show()
 
-fig = plt.figure(figsize=(14, 12))
-ax = plt.axes(projection='3d')
-x = np.array(biology_score)
-y = np.array(weekly_self_study_hours)  
-z = np.array(part_time_job)
-#z = [row[0] for row in z]
-ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plotting the correlation between weekly study hours and biology score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Biology score vs Weekly study hours")
+plt.xlabel("Biology score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(biology_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
 plt.show()
 
-fig = plt.figure(figsize=(14, 12))
-ax = plt.axes(projection='3d')
-x = np.array(chemistry_score)
-y = np.array(weekly_self_study_hours)
-z = np.array(part_time_job)
-#z = [row[0] for row in z]
-ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plotting the correlation between weekly study hours and english score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("English score vs Weekly study hours")
+plt.xlabel("English score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(english_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
 plt.show()
 
-fig = plt.figure(figsize=(14, 12))
-ax = plt.axes(projection='3d')
-x = np.array(geography_score)
-y = np.array(weekly_self_study_hours)
-z = np.array(part_time_job)
-#z = [row[0] for row in z]
-ax.plot_trisurf(x.flatten(), y.flatten(), z.flatten(), linewidth=0.2, antialiased=True)
+#plotting the correlation between weekly study hours and geography score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Geography score vs Weekly study hours")
+plt.xlabel("Geography score")
+plt.ylabel("Weekly study hours")
+scatter = plt.scatter(geography_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
 plt.show()
-
 
 
