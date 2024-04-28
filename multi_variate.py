@@ -9,6 +9,7 @@ import statsmodels.api as sm
 
 
 
+
 df = pd.read_csv('modified_student_scores.csv')
 
 
@@ -375,7 +376,7 @@ plt.xlabel("Math score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(math_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-plt.show()
+#plt.show()
 
 #plotting the correlation between weekly study hours and history score with if the student is doing extracurricular activities or not
 names = ["Doing", "Not Doing"]
@@ -384,7 +385,7 @@ plt.xlabel("History score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(history_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-plt.show()
+#plt.show()
 
 #plotting the correlation between weekly study hours and physics score with if the student is doing extracurricular activities or not
 names = ["Doing", "Not Doing"]
@@ -393,7 +394,7 @@ plt.xlabel("Physics score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(physics_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-plt.show()
+#plt.show()
 
 #plotting the correlation between weekly study hours and chemistry score with if the student is doing extracurricular activities or not
 names = ["Doing", "Not Doing"]
@@ -402,7 +403,7 @@ plt.xlabel("Chemistry score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(chemistry_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-plt.show()
+#plt.show()
 
 #plotting the correlation between weekly study hours and biology score with if the student is doing extracurricular activities or not
 names = ["Doing", "Not Doing"]
@@ -411,7 +412,7 @@ plt.xlabel("Biology score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(biology_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-plt.show()
+#plt.show()
 
 #plotting the correlation between weekly study hours and english score with if the student is doing extracurricular activities or not
 names = ["Doing", "Not Doing"]
@@ -420,7 +421,7 @@ plt.xlabel("English score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(english_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-plt.show()
+#plt.show()
 
 #plotting the correlation between weekly study hours and geography score with if the student is doing extracurricular activities or not
 names = ["Doing", "Not Doing"]
@@ -429,6 +430,141 @@ plt.xlabel("Geography score")
 plt.ylabel("Weekly study hours")
 scatter = plt.scatter(geography_score, weekly_self_study_hours, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-plt.show()
+#plt.show()
+
+
+#####CORRIELATION BETWEEN MISSING DAYS AND SCORES WITH IF THE STUDENT IS WORKING PART TIME OR NOT
+
+
+
+#plotting the correlation between missing days and math score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("Math score vs Missing days")
+plt.xlabel("Math score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(math_score, missing_days, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+#plotting the correlation between missing days and history score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("History score vs Missing days")
+plt.xlabel("History score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(history_score, missing_days, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+#plotting the correlation between missing days and physics score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("Physics score vs Missing days")
+plt.xlabel("Physics score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(physics_score, missing_days, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+#plotting the correlation between missing days and chemistry score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("Chemistry score vs Missing days")
+plt.xlabel("Chemistry score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(chemistry_score, missing_days, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+#plotting the correlation between missing days and biology score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("Biology score vs Missing days")
+plt.xlabel("Biology score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(biology_score, missing_days, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+#plotting the correlation between missing days and english score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("English score vs Missing days")
+plt.xlabel("English score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(english_score, missing_days, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+#plotting the correlation between missing days and geography score with if the student is working part time or not
+names = ["Working", "Not Working"]
+plt.title("Geography score vs Missing days")
+plt.xlabel("Geography score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(geography_score, missing_days, c=part_time_job, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
+#plt.show()
+
+#####CORRIELATION BETWEEN MISSING DAYS AND SCORES WITH IF THE STUDENT HAS EXTRA CURRICULAR OR NOT
+
+#plotting the correlation between missing days and math score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Math score vs Missing days")
+plt.xlabel("Math score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(math_score, missing_days, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
+#plt.show()
+
+#plotting the correlation between missing days and history score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("History score vs Missing days")
+plt.xlabel("History score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(history_score, missing_days, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
+#plt.show()
+
+#plotting the correlation between missing days and physics score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Physics score vs Missing days")
+plt.xlabel("Physics score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(physics_score, missing_days, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
+##plt.show()
+
+#plotting the correlation between missing days and chemistry score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Chemistry score vs Missing days")
+plt.xlabel("Chemistry score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(chemistry_score, missing_days, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
+#plt.show()
+
+#plotting the correlation between missing days and biology score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Biology score vs Missing days")
+plt.xlabel("Biology score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(biology_score, missing_days, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
+#plt.show()
+
+#plotting the correlation between missing days and english score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("English score vs Missing days")
+plt.xlabel("English score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(english_score, missing_days, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
+#plt.show()
+
+#plotting the correlation between missing days and geography score with if the student is doing extracurricular activities or not
+names = ["Doing", "Not Doing"]
+plt.title("Geography score vs Missing days")
+plt.xlabel("Geography score")
+plt.ylabel("Missing days")
+scatter = plt.scatter(geography_score, missing_days, c=extracurricular_activities, cmap='viridis')
+plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
+#plt.show()
+
+
 
 
