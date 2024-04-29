@@ -892,5 +892,3 @@ for score in scores:
     print(model.summary())
     print("\n")
     
-    
-    
