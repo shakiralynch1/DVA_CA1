@@ -34,7 +34,7 @@ data = df[['part_time_job_True', 'weekly_self_study_hours', 'absence_days', 'ext
                 'geography_score']]
 column_names = np.array(data.columns)
 
-# Standardize the variables
+
 # Standardize the variables
 scaled_data = StandardScaler().fit_transform(data)
 
@@ -48,7 +48,7 @@ per_var = np.round(pca.explained_variance_ratio_*100, decimals =1)
 print(per_var)
 
 
-# Get the loading scores
+
 loading_scores = pca.components_.T * np.sqrt(pca.explained_variance_)
 
 #plotting scree plot
@@ -61,6 +61,17 @@ plt.show()
 
 
 
+loading_scores = pd.Series(loading_scores[0], index=column_names)
+print(loading_scores)
+
+print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+
+sorted_loading_scores = loading_scores.abs().sort_values(ascending=False)
+top_10_genes = sorted_loading_scores[0:10].index.values
+print(top_10_genes)
+
+# Get the top 10 genes that contribute to pc1
+print(loading_scores[top_10_genes])
 
 
 
