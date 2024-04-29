@@ -8,10 +8,7 @@ from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
 
 
-
-
 df = pd.read_csv('modified_student_scores.csv')
-
 
 #initialize the independent variables
 
@@ -33,13 +30,234 @@ biology_score = df['biology_score'].values
 english_score = df['english_score'].values
 geography_score = df['geography_score'].values
 
+
+# IV TO IV SCATTER PLOTS
+
+# Scatter plot between part_time_job and weekly_self_study_hours
+plt.scatter(part_time_job, weekly_self_study_hours)
+plt.xlabel('Part Time Job')
+plt.ylabel('Weekly Self Study Hours')
+plt.title('Scatter Plot: Part Time Job vs Weekly Self Study Hours')
+plt.show()
+
+# Scatter plot between extracurricular_activities and weekly_self_study_hours
+plt.scatter(extracurricular_activities, weekly_self_study_hours)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Weekly Self Study Hours')
+plt.title('Scatter Plot: Extracurricular Activities vs Weekly Self Study Hours')
+plt.show()
+
+# Scatter plot between missing_days and weekly_self_study_hours
+plt.scatter(missing_days, weekly_self_study_hours)
+plt.xlabel('Missing Days')
+plt.ylabel('Weekly Self Study Hours')
+plt.title('Scatter Plot: Missing Days vs Weekly Self Study Hours')
+plt.show()
+
+# Scatter plot between part_time_job and missing_days
+plt.scatter(part_time_job, missing_days)
+plt.xlabel('Part Time Job')
+plt.ylabel('Missing Days')
+plt.title('Scatter Plot: Part Time Job vs Missing Days')
+plt.show()
+
+# Scatter plot between extracurricular_activities and missing_days
+plt.scatter(extracurricular_activities, missing_days)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Missing Days')
+plt.title('Scatter Plot: Extracurricular Activities vs Missing Days')
+plt.show()
+
+# Scatter plot between part_time_job and extracurricular_activities
+plt.scatter(part_time_job, extracurricular_activities)
+plt.xlabel('Part Time Job')
+plt.ylabel('Extracurricular Activities')
+plt.title('Scatter Plot: Part Time Job vs Extracurricular Activities')
+plt.show()
+
+# IV TO DV SCATTER PLOTS
+
+# Scatter plot between missing_days and math_score
+plt.scatter(missing_days, math_score)
+plt.xlabel('Missing Days')
+plt.ylabel('Math Score')
+plt.title('Scatter Plot: Missing Days vs Math Score')
+plt.show()
+
+# Scatter plot between missing_days and history_score
+plt.scatter(missing_days, history_score)
+plt.xlabel('Missing Days')
+plt.ylabel('History Score')
+plt.title('Scatter Plot: Missing Days vs History Score')
+plt.show()
+
+# Scatter plot between missing_days and physics_score
+plt.scatter(missing_days, physics_score)
+plt.xlabel('Missing Days')
+plt.ylabel('Physics Score')
+plt.title('Scatter Plot: Missing Days vs Physics Score')
+plt.show()
+
+# Scatter plot between missing_days and chemistry_score
+plt.scatter(missing_days, chemistry_score)
+plt.xlabel('Missing Days')
+plt.ylabel('Chemistry Score')
+plt.title('Scatter Plot: Missing Days vs Chemistry Score')
+plt.show()
+
+# Scatter plot between missing_days and biology_score
+plt.scatter(missing_days, biology_score)
+plt.xlabel('Missing Days')
+plt.ylabel('Biology Score')
+plt.title('Scatter Plot: Missing Days vs Biology Score')
+plt.show()
+
+# Scatter plot between missing_days and english_score
+plt.scatter(missing_days, english_score)
+plt.xlabel('Missing Days')
+plt.ylabel('English Score')
+plt.title('Scatter Plot: Missing Days vs English Score')
+plt.show()
+
+# Scatter plot between missing_days and geography_score
+plt.scatter(missing_days, geography_score)
+plt.xlabel('Missing Days')
+plt.ylabel('Geography Score')
+plt.title('Scatter Plot: Missing Days vs Geography Score')
+plt.show()
+
+# Scatter plot between part_time_job and math_score
+plt.scatter(part_time_job, math_score)
+plt.xlabel('Part Time Job')
+plt.ylabel('Math Score')
+plt.title('Scatter Plot: Part Time Job vs Math Score')
+plt.show()
+
+# Scatter plot between part_time_job and history_score
+plt.scatter(part_time_job, history_score)
+plt.xlabel('Part Time Job')
+plt.ylabel('History Score')
+plt.title('Scatter Plot: Part Time Job vs History Score')
+plt.show()
+
+# Scatter plot between part_time_job and physics_score
+plt.scatter(part_time_job, physics_score)
+plt.xlabel('Part Time Job')
+plt.ylabel('Physics Score')
+plt.title('Scatter Plot: Part Time Job vs Physics Score')
+plt.show()
+
+# Scatter plot between part_time_job and chemistry_score
+plt.scatter(part_time_job, chemistry_score)
+plt.xlabel('Part Time Job')
+plt.ylabel('Chemistry Score')
+plt.title('Scatter Plot: Part Time Job vs Chemistry Score')
+plt.show()
+
+# Scatter plot between part_time_job and biology_score
+plt.scatter(part_time_job, biology_score)
+plt.xlabel('Part Time Job')
+plt.ylabel('Biology Score')
+plt.title('Scatter Plot: Part Time Job vs Biology Score')
+plt.show()
+
+# Scatter plot between part_time_job and english_score
+plt.scatter(part_time_job, english_score)
+plt.xlabel('Part Time Job')
+plt.ylabel('English Score')
+plt.title('Scatter Plot: Part Time Job vs English Score')
+plt.show()
+
+# Scatter plot between part_time_job and geography_score
+plt.scatter(part_time_job, geography_score)
+plt.xlabel('Part Time Job')
+plt.ylabel('Geography Score')
+plt.title('Scatter Plot: Part Time Job vs Geography Score')
+plt.show()
+
+# Scatter plot between extracurricular_activities and math_score
+plt.scatter(extracurricular_activities, math_score)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Math Score')
+plt.title('Scatter Plot: Extracurricular Activities vs Math Score')
+plt.show()
+
+# Scatter plot between extracurricular_activities and history_score
+plt.scatter(extracurricular_activities, history_score)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('History Score')
+plt.title('Scatter Plot: Extracurricular Activities vs History Score')
+plt.show()
+
+# Scatter plot between extracurricular_activities and physics_score
+plt.scatter(extracurricular_activities, physics_score)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Physics Score')
+plt.title('Scatter Plot: Extracurricular Activities vs Physics Score')
+plt.show()
+
+# Scatter plot between extracurricular_activities and chemistry_score
+plt.scatter(extracurricular_activities, chemistry_score)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Chemistry Score')
+plt.title('Scatter Plot: Extracurricular Activities vs Chemistry Score')
+plt.show()
+
+# Scatter plot between extracurricular_activities and biology_score
+plt.scatter(extracurricular_activities, biology_score)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Biology Score')
+plt.title('Scatter Plot: Extracurricular Activities vs Biology Score')
+plt.show()
+
+# Scatter plot between extracurricular_activities and english_score
+plt.scatter(extracurricular_activities, english_score)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('English Score')
+plt.title('Scatter Plot: Extracurricular Activities vs English Score')
+plt.show()
+
+# Scatter plot between extracurricular_activities and geography_score
+plt.scatter(extracurricular_activities, geography_score)
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Geography Score')
+plt.title('Scatter Plot: Extracurricular Activities vs Geography Score')
+plt.show()
+
+# Scatter plot between weekly_self_study_hours and math_score
+plt.scatter(weekly_self_study_hours, math_score)
+plt.xlabel('Weekly Self Study Hours')
+plt.ylabel('Math Score')
+plt.title('Scatter Plot: Weekly Self Study Hours vs Math Score')
+plt.show()
+
+# Scatter plot between weekly_self_study_hours and history_score
+plt.scatter(weekly_self_study_hours, history_score)
+plt.xlabel('Weekly Self Study Hours')
+plt.ylabel('History Score')
+plt.title('Scatter Plot: Weekly Self Study Hours vs History Score')
+plt.show()
+
+# Scatter plot between weekly_self_study_hours and physics_score
+plt.scatter(weekly_self_study_hours, physics_score)
+plt.xlabel('Weekly Self Study Hours')
+plt.ylabel('Physics Score')
+plt.title('Scatter Plot: Weekly Self Study Hours vs Physics Score')
+plt.show()
+
+# Scatter plot between weekly_self_study_hours and chemistry_score
+plt.scatter(weekly_self_study_hours, chemistry_score)
+plt.xlabel('Weekly Self Study Hours')
+plt.ylabel('Chemistry Score')
+plt.title('Scatter Plot: Weekly Self Study Hours vs Chemistry Score')
+plt.show()
+
 #IV TO IV SCATTER PLOTS
 # IV TO IV SCATTER PLOTS
 
-# correlation between gender and part_time_job
 
 
-#Strong correlation between weekly_self_study_hours and math_score, physics_score, chemistry_score, biology_score, english_score, geography_score
+#somehwhat of a  correlation between weekly_self_study_hours and math_score, physics_score, chemistry_score, biology_score, english_score, geography_score
 
 #Pearson Correlation Coefficient
 
@@ -498,7 +716,7 @@ plt.xlabel("Geography score")
 plt.ylabel("Missing days")
 scatter = plt.scatter(geography_score, missing_days, c=part_time_job, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Part Time Job")
-#plt.show()
+plt.show()
 
 #####CORRIELATION BETWEEN MISSING DAYS AND SCORES WITH IF THE STUDENT HAS EXTRA CURRICULAR OR NOT
 
@@ -509,7 +727,7 @@ plt.xlabel("Math score")
 plt.ylabel("Missing days")
 scatter = plt.scatter(math_score, missing_days, c=extracurricular_activities, cmap='viridis')
 plt.legend(handles=scatter.legend_elements()[0], labels=names, title="Extracurricular Activities")
-#plt.show()
+plt.show()
 
 #plotting the correlation between missing days and history score with if the student is doing extracurricular activities or not
 names = ["Doing", "Not Doing"]
