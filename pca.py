@@ -4,6 +4,7 @@ from sklearn import preprocessing
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
 
 
 
@@ -28,6 +29,16 @@ chemistry_score = df['chemistry_score'].values
 biology_score = df['biology_score'].values
 english_score = df['english_score'].values
 geography_score = df['geography_score'].values 
+
+
+# Standardize the variables
+math_score_scaled = StandardScaler().fit_transform(df['math_score'].values.reshape(-1, 1))
+history_score_scaled = StandardScaler().fit_transform(df['history_score'].values.reshape(-1, 1))
+physics_score_scaled = StandardScaler().fit_transform(df['physics_score'].values.reshape(-1, 1))
+chemistry_score_scaled = StandardScaler().fit_transform(df['chemistry_score'].values.reshape(-1, 1))
+biology_score_scaled = StandardScaler().fit_transform(df['biology_score'].values.reshape(-1, 1))
+english_score_scaled = StandardScaler().fit_transform(df['english_score'].values.reshape(-1, 1))
+geography_score_scaled = StandardScaler().fit_transform(df['geography_score'].values.reshape(-1, 1))
 
 data = df[['part_time_job_True', 'weekly_self_study_hours', 'absence_days', 'extracurricular_activities_True',
                 'math_score', 'history_score', 'physics_score', 'chemistry_score', 'biology_score', 'english_score',
@@ -73,5 +84,29 @@ print(top_10_genes)
 # Get the top 10 genes that contribute to pc1
 print(loading_scores[top_10_genes])
 
+# Split the data into independent variables (X) and dependent variable (y)
 
+X = df[['part_time_job_True']]
+y = df['biology_score']
+
+
+###########MODEL ON PREDICTING ON SCORES####################
+
+
+# Split the data into training and testing sets
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+
+# Train the model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Predict the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+from sklearn.metrics import accuracy_score
+print(accuracy_score(y_test, y_pred))
+
+ 
 
