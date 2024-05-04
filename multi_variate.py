@@ -411,7 +411,7 @@ print(f"Pearson correlation between weekly_self_study_hours and geography_score:
 #highest correlation is between weekly_self_study_hours and math_score, physics_score, chemistry_score, biology_score, english_score, geography_score
 #The variables that affect the performance in scores is weekly_self_study_hours
 #The variables that affect the performance in scores is not part_time_job, extracurricular_activities, missing_days
-#The variables that affect the performance
+#The variables that affect the performance 
 
 
 #Pearson correlation between weekly_self_study_hours and math_score: 0.39356929824986275
@@ -422,7 +422,7 @@ print(f"Pearson correlation between weekly_self_study_hours and geography_score:
 #Pearson correlation between weekly_self_study_hours and english_score: 0.2477960153508276
 #Pearson correlation between weekly_self_study_hours and geography_score: 0.15362244292021798
 
-#these values of correlations are not very high but they are still significant
+
 
 
 #modeling bivariate relationships
