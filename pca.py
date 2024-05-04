@@ -47,7 +47,8 @@ column_names = np.array(data.columns)
 
 
 # Standardize the variables
-scaled_data = StandardScaler().fit_transform(data)
+scaled_data = preprocessing.scale(data.T)
+
 
 
 
