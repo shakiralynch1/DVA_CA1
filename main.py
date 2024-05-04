@@ -56,3 +56,82 @@ print(weekly_self_study_hours[0])
 print(type(extracurricular_activities[0]))
 print(extracurricular_activities[0])
 
+
+# Calculate the distribution of scores
+math_score_dist = np.histogram(math_score, bins=10)
+history_score_dist = np.histogram(history_score, bins=10)
+physics_score_dist = np.histogram(physics_score, bins=10)
+chemistry_score_dist = np.histogram(chemistry_score, bins=10)
+biology_score_dist = np.histogram(biology_score, bins=10)
+english_score_dist = np.histogram(english_score, bins=10)
+geography_score_dist = np.histogram(geography_score, bins=10)
+
+# Plot the distribution of scores
+plt.figure(figsize=(12, 8))
+plt.subplot(2, 4, 1)
+plt.hist(math_score, bins=10)
+plt.title('Math Score Distribution')
+
+plt.subplot(2, 4, 2)
+plt.hist(history_score, bins=10)
+plt.title('History Score Distribution')
+
+plt.subplot(2, 4, 3)
+plt.hist(physics_score, bins=10)
+plt.title('Physics Score Distribution')
+
+plt.subplot(2, 4, 4)
+plt.hist(chemistry_score, bins=10)
+plt.title('Chemistry Score Distribution')
+
+plt.subplot(2, 4, 5)
+plt.hist(biology_score, bins=10)
+plt.title('Biology Score Distribution')
+
+plt.subplot(2, 4, 6)
+plt.hist(english_score, bins=10)
+plt.title('English Score Distribution')
+
+plt.subplot(2, 4, 7)
+plt.hist(geography_score, bins=10)
+plt.title('Geography Score Distribution')
+
+plt.tight_layout()
+plt.show()
+
+# Calculate the distribution of missing days
+missing_days_dist = np.histogram(missing_days, bins=10)
+
+# Plot the distribution of missing days
+plt.figure(figsize=(6, 4))
+plt.hist(missing_days, bins=10)
+plt.title('Missing Days Distribution')
+plt.xlabel('Number of Missing Days')
+plt.ylabel('Frequency')
+plt.show()
+
+# Plot the distribution of part-time job
+plt.figure(figsize=(6, 4))
+plt.hist(part_time_job, bins=2)
+plt.title('Part-Time Job Distribution')
+plt.xlabel('Part-Time Job')
+plt.ylabel('Frequency')
+plt.xticks([0, 1], ['No', 'Yes'])
+plt.show()
+
+# Plot the distribution of weekly self-study hours
+plt.figure(figsize=(6, 4))
+plt.hist(weekly_self_study_hours, bins=10)
+plt.title('Weekly Self-Study Hours Distribution')
+plt.xlabel('Number of Weekly Self-Study Hours')
+plt.ylabel('Frequency')
+plt.show()
+
+# Plot the distribution of extracurricular activities
+plt.figure(figsize=(6, 4))
+plt.hist(extracurricular_activities, bins=2)
+plt.title('Extracurricular Activities Distribution')
+plt.xlabel('Extracurricular Activities')
+plt.ylabel('Frequency')
+plt.xticks([0, 1], ['No', 'Yes'])
+plt.show()
