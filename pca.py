@@ -47,7 +47,8 @@ column_names = np.array(data.columns)
 
 
 # Standardize the variables
-scaled_data = StandardScaler().fit_transform(data)
+scaled_data = preprocessing.scale(data.T)
+
 
 
 
@@ -108,5 +109,17 @@ y_pred = model.predict(X_test)
 from sklearn.metrics import accuracy_score
 print(accuracy_score(y_test, y_pred))
 
- 
+# Select the first two principal components (pc1 and pc2)
+pc1 = pca_data[:, 0]
+pc2 = pca_data[:, 1]
 
+# Reshape pc1 and pc2 to column vectors
+pc1 = pc1.reshape(-1, 1)
+pc2 = pc2.reshape(-1, 1)
+
+# Plot pc1 and pc2 against each other
+plt.scatter(pc1, pc2)
+plt.xlabel("PC1")
+plt.ylabel("PC2")
+plt.title("PC1 vs PC2")
+plt.show()
